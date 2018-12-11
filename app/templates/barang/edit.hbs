@@ -1,7 +1,17 @@
 <form>
-    nama barang : {{input value=model.nama_barang required=true}} <br>
-    departemen : {{input value=model.nama_departemen required=true}} <br>
+    nama barang : {{input value=nama_barang required=true}} <br>
+    {{!--departemen : {{input value=model.nama_departemen required=true}} <br>--}}
+    departemen : 
+            <select>
+                {{#each kategoris as |item|}}
+                    <option selected hidden>---</option>
+                    <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
+                {{/each}}
+            </select> 
     kategori : {{input value=model.nama_kategori required=true}} <br>
+    {{!--nama barang : {{input required=true}} <br>
+    departemen : {{input required=true}} <br>
+    kategori : {{input required=true}} <br>--}}
     <button type="submit" {{action 'updateBarang' model.id}} >Update</button>
     <button {{action 'cancel'}} >cancel</button>
 </form>

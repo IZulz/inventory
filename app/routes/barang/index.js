@@ -16,7 +16,7 @@ export default Route.extend({
             kategori      : this.get('store').findAll('kategori').then(res => res),
             departemen    : this.get('store').findAll('departemen').then(res => res),
             // barang        : this.get('store').findAll('barang', params.id).then(res => res)
-            barang        :  this.get('barangService').ambilBarang().then(res => res)
+            barang        :  this.get('barangService').ambilBarang(params.id).then(res => res)
         })
     },
     setupController(controller,model){

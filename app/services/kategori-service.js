@@ -8,7 +8,7 @@ export default Service.extend({
         }
         // this.get('store').query('barang',{filter : {deleted : null}}).then(res => {console.log(res)});
         // return this.get('store').query('barang', {filter: {nama_barang: 'laptop' }})
-        return this.get('store').query('kategori', { orderBy: 'deleted', equalTo: null})
+        return this.get('store').query('kategori', { orderBy: id, equalTo: null})
     },
     addKategori(kategori){
         // let tambahKategori = this.get('store').createRecord('kategori',{

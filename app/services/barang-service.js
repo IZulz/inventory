@@ -34,8 +34,6 @@ export default Service.extend({
                 kode_barang        : newCode,
                 deleted            : null,
                 updated            : null,
-                kode_barang        : newCode,
-               
             })
             
             return newBarang.save()

@@ -5,6 +5,7 @@ export default Controller.extend({
     selected : null,
     selectedkat : null,
     barangService : service(),
+    store : service(),
     init(){
         this._super(...arguments)
         this.set('barang', {});
@@ -30,9 +31,9 @@ export default Controller.extend({
         deleteBarang(barang){
             this.get('barangService').deleteBarang(barang)
         },
-        updateBarang(){
-            this.transitionToRoute('barang.edit');
-
+        updateBarang(id){
+            // this.transitionToRoute('barang.edit');
+            this.get('barangService').ambilBarang(id).then(res => res);
         }
     }
 });

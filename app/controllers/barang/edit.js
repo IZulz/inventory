@@ -3,6 +3,10 @@ import {inject as service} from '@ember/service';
 
 export default Controller.extend({
     barangService : service(),
+    nama_barang: null,
+    init(){
+        this._super(...arguments)
+    },
     actions : {
           selected: function(selected) {
             console.log(selected)

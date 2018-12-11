@@ -19,11 +19,11 @@
             <td>kategori</td>
             <td>:</td>
             <select onchange={{action "selectedkat" value="target.value"}}>
-            {{#each kategoris as |item|}}
-            <option selected hidden>---</option>
-            <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
-        {{/each}}
-        </select> 
+                {{#each kategoris as |item|}}
+                    <option selected hidden>---</option>
+                    <option value="{{item.nama_kategori}}">{{ item.nama_kategori}}</option>
+                {{/each}}
+            </select> 
         </tr>
         <tr style="background-color: white">
             <td colspan="3">
@@ -56,7 +56,10 @@
         </td>
         <td>
             <button class="btn btn-danger" {{action 'deleteBarang' item}} >Delete</button>
-            {{#link-to 'barang.edit' item.id tagName='button' class="btn btn-warning" }}Edit{{/link-to}}
+            {{#link-to 'barang.edit' item.id tagName='button' class="btn btn-warning"}}
+                <span {{action "updateBarang"}}>Edit</span>
+            {{/link-to}}
+            {{!--<botton class="btn btn-warning" {{action "updateBarang" item}} >Edit</botton>--}}
         </td>
     </tr>
     {{/each}}
